@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Seller home</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F2EFEA}
+a{color:#2E5E45}a:hover{color:#1F4230}
+</style>
+</helmet>
+<div style="width: 1280px; height: 2160px; overflow: hidden; background: #F2EFEA; font-family: 'Hanken Grotesk', system-ui, sans-serif; color: #1E1E1B">
+
+<header style="height: 72px; box-sizing: border-box; padding: 0 32px 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #FBFAF7; border-bottom: 1px solid #E4DFD6">
+<a href="#" style="width: 192px; display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1E1E1B">
+<span style="width: 34px; height: 34px; border-radius: 999px; background: #2E5E45; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: Fraunces, Georgia, serif; font-weight: 600">J</span>
+<span style="font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 600">John Doe</span>
+</a>
+<label style="flex-grow: 1; max-width: 520px; height: 42px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #E1DCD3; border-radius: 999px; color: #6B675F">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<input type="search" placeholder="Search orders, products, customers" aria-label="Search your shop" style="flex-grow: 1; min-width: 0; border: 0; outline: none; background: transparent; font: inherit; font-size: 14px; color: #1E1E1B">
+</label>
+<nav style="display: flex; align-items: center; gap: 8px" aria-label="Account">
+<a href="Storefront.dc.html" style="padding: 12px; font-size: 15px; font-weight: 500; color: #1E1E1B; text-decoration: none">All products</a>
+<button aria-label="Notifications" style="position: relative; width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #1E1E1B; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 21h4"></path></svg>
+<span style="position: absolute; top: 9px; right: 10px; width: 8px; height: 8px; border-radius: 999px; background: #C3502F"></span>
+</button>
+<button aria-label="Account menu for Maya" style="height: 44px; padding: 0 10px 0 4px; display: flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; background: transparent; font: inherit; color: #1E1E1B; cursor: pointer">
+<span style="width: 36px; height: 36px; border-radius: 999px; background: #6B4630; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: Fraunces, Georgia, serif; font-size: 15px; font-weight: 600">M</span>
+<span style="font-size: 14px; font-weight: 600">Maya</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+</nav>
+</header>
+
+<div style="display: flex; align-items: stretch; height: 2088px">
+<aside style="width: 240px; flex-shrink: 0; box-sizing: border-box; padding: 16px 12px; display: flex; flex-direction: column; gap: 4px; background: #EBE7E0; border-right: 1px solid #E1DCD3" aria-label="Seller menu">
+<button style="height: 52px; margin-bottom: 10px; padding: 0 10px; display: flex; align-items: center; gap: 10px; border: 1px solid #DAD4CA; border-radius: 12px; background: #FBFAF7; font: inherit; color: #1E1E1B; cursor: pointer">
+<span style="width: 30px; height: 30px; border-radius: 8px; background: #6B4630; color: #F1DFC0; display: flex; align-items: center; justify-content: center; font-family: Fraunces, Georgia, serif; font-size: 14px; font-weight: 600">O</span>
+<span style="flex-grow: 1; text-align: left; font-size: 14px; font-weight: 600">Oak &amp; Ember</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l4-4 4 4M8 15l4 4 4-4"></path></svg>
+</button>
+
+<button onClick="{{go.home}}" style="{{nav.home}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Home</button>
+<button onClick="{{go.orders}}" style="{{nav.orders}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16l-3-2-2 2-2-2-2 2-2-2-3 2z"></path><path d="M9 9h6M9 13h6"></path></svg><span style="flex-grow: 1">Orders</span><span style="font-size: 12px; color: #5E5A52">0</span></button>
+<button onClick="{{go.products}}" style="{{nav.products}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"></path><circle cx="7.5" cy="8.5" r="1.4"></circle></svg>Products</button>
+<button onClick="{{go.requests}}" style="{{nav.requests}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"></path></svg><span style="flex-grow: 1">Custom requests</span></button>
+<button onClick="{{go.customers}}" style="{{nav.customers}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c1-3.5 3.5-5.5 6.5-5.5s5.5 2 6.5 5.5"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c2 .7 3.2 2.5 3.8 5.2"></path></svg>Customers</button>
+<button onClick="{{go.analytics}}" style="{{nav.analytics}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>Analytics</button>
+<button onClick="{{go.marketing}}" style="{{nav.marketing}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 5V5L7 10z"></path><path d="M18 9a4 4 0 0 1 0 6"></path></svg>Marketing</button>
+<button onClick="{{go.discounts}}" style="{{nav.discounts}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"></path><circle cx="7" cy="7" r="2.5"></circle><circle cx="17" cy="17" r="2.5"></circle></svg>Discounts</button>
+<button onClick="{{go.payouts}}" style="{{nav.payouts}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M7 15h3"></path></svg>Payouts</button>
+
+<div style="margin: 18px 10px 6px; font-size: 12px; font-weight: 600; color: #5E5A52">Sales channels</div>
+<button onClick="{{go.website}}" style="{{nav.website}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.7 5.5 3.7 9s-1.2 6.5-3.7 9c-2.5-2.5-3.7-5.5-3.7-9S9.5 5.5 12 3z"></path></svg><span style="flex-grow: 1">Website</span><span style="padding: 2px 8px; border-radius: 999px; background: #F5E3CF; color: #7A3F0C; font-size: 11px; font-weight: 600">Not live</span></button>
+<button onClick="{{go.marketplace}}" style="{{nav.marketplace}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9"></path><path d="M4 9h16v2a3 3 0 0 1-5.3 2 3 3 0 0 1-5.4 0A3 3 0 0 1 4 11z"></path><path d="M5 13v7h14v-7"></path></svg>Marketplace</button>
+
+<div style="flex-grow: 1"></div>
+<div style="display: flex; flex-direction: column; gap: 10px; margin: 0 4px 12px; padding: 14px; border-radius: 14px; background: #FBFAF7">
+<div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600"><span>Setup guide</span><span style="color: #2E5E45">{{doneShort}}</span></div>
+<div style="height: 6px; border-radius: 999px; background: #E6E1D8; overflow: hidden"><div style="{{progressStyle}}"></div></div>
+</div>
+<button onClick="{{go.settings}}" style="{{nav.settings}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg>Settings</button>
+</aside>
+
+<div style="flex-grow: 1; min-width: 0">
+<sc-if value="{{notHome}}" hint-placeholder-val="{{false}}">
+<div style="margin: 32px 40px 0; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; border-radius: 14px; background: #FBFAF7; border: 1px solid #E1DCD3; font-size: 14px">
+<span><strong>{{pageName}}</strong> isn’t designed yet. This prototype shows Home.</span>
+<button onClick="{{go.home}}" style="height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: #1E1E1B; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Back to Home</button>
+</div>
+</sc-if>
+
+<section style="padding: 32px 40px 0" aria-label="Shop profile">
+<div style="background: #FFFFFF; border-radius: 22px; overflow: hidden">
+<div style="position: relative; height: 180px; background: #DCE5DC; display: flex; align-items: center; justify-content: flex-end; gap: 18px; padding-right: 56px">
+<span style="width: 150px; height: 82px; border-radius: 14px; background: #B8956A; transform: rotate(-6deg)"></span>
+<span style="width: 104px; height: 104px; border-radius: 999px; background: #7E9C80"></span>
+<span style="width: 120px; height: 60px; border-radius: 0 0 60px 60px; background: #6B4630"></span>
+<button style="position: absolute; top: 16px; left: 16px; height: 40px; padding: 0 14px; display: flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; background: rgba(255,255,255,0.9); font: inherit; font-size: 13px; font-weight: 600; color: #1E1E1B; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M21 16l-5-5-8 8"></path></svg>
+Change cover
+</button>
+</div>
+<div style="display: flex; align-items: flex-end; gap: 24px; padding: 0 36px 28px">
+<div style="width: 120px; height: 120px; margin-top: -48px; flex-shrink: 0; box-sizing: border-box; border: 5px solid #FFFFFF; border-radius: 999px; background: #6B4630; color: #F1DFC0; display: flex; align-items: center; justify-content: center; font-family: Fraunces, Georgia, serif; font-size: 48px; font-weight: 600">O</div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 6px; padding-top: 18px">
+<div style="font-size: 14px; color: #5E5A52">Welcome back, Maya</div>
+<h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 40px; line-height: 1.05; font-weight: 600">Oak &amp; Ember</h1>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; color: #5E5A52">
+<span style="padding: 4px 10px; border-radius: 999px; background: #EAE0CF; color: #5A3E22; font-weight: 600; font-size: 12px">Wooden goods</span>
+<span style="display: flex; align-items: center; gap: 4px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>[CITY, STATE]</span>
+<span>Hand-finished boards, bowls and kitchen wood</span>
+</div>
+</div>
+<div style="display: flex; gap: 10px">
+<button style="height: 44px; padding: 0 18px; border: 1px solid #CFC9BF; border-radius: 999px; background: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; color: #1E1E1B; cursor: pointer">Edit profile</button>
+<a href="Storefront.dc.html" style="height: 44px; box-sizing: border-box; padding: 0 18px; display: flex; align-items: center; border-radius: 999px; background: #1E1E1B; color: #FFFFFF; font-size: 14px; font-weight: 600; text-decoration: none">View public page</a>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 32px 40px 0; display: flex; gap: 24px; align-items: flex-start">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 18px; padding: 28px; background: #FFFFFF; border-radius: 22px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 30px; font-weight: 600">Start your business</h2>
+<p style="margin: 0; font-size: 15px; color: #5E5A52">Five steps from sign-up to your first sale.</p>
+</div>
+<span style="font-size: 14px; font-weight: 600; color: #2E5E45">{{doneLabel}}</span>
+</div>
+<div style="height: 8px; border-radius: 999px; background: #EFEBE4; overflow: hidden"><div style="{{progressStyle}}"></div></div>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+<li style="{{s.rowStyle}}">
+<button onClick="{{s.toggle}}" aria-expanded="{{s.open}}" style="width: 100%; min-height: 60px; padding: 10px 16px; display: flex; align-items: center; gap: 14px; border: 0; background: transparent; font: inherit; color: #1E1E1B; text-align: left; cursor: pointer">
+<span style="{{s.markStyle}}">
+<sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+<sc-if value="{{s.todo}}" hint-placeholder-val="{{true}}">{{s.num}}</sc-if>
+</span>
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="{{s.titleStyle}}">{{s.title}}</span>
+<span style="font-size: 13px; color: #5E5A52">{{s.sub}}</span>
+</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E5A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="{{s.chevStyle}}"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<sc-if value="{{s.open}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 16px 16px 66px">
+<span style="font-size: 14px; line-height: 1.5; color: #45423C">{{s.body}}</span>
+<div style="display: flex; gap: 8px; flex-shrink: 0">
+<sc-if value="{{s.todo}}" hint-placeholder-val="{{true}}">
+<button onClick="{{s.complete}}" style="height: 40px; padding: 0 14px; border: 1px solid #CFC9BF; border-radius: 999px; background: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; color: #1E1E1B; cursor: pointer">Mark done</button>
+</sc-if>
+<button style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: #2E5E45; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{s.cta}}</button>
+</div>
+</div>
+</sc-if>
+</li>
+</sc-for>
+</ol>
+</div>
+
+<aside style="width: 300px; flex-shrink: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; background: #FFFFFF; border-radius: 22px">
+<h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 20px; font-weight: 600">Your shop at a glance</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 14px; border-radius: 14px; background: #F6F3EE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 28px; font-weight: 500">0</span><span style="font-size: 13px; color: #5E5A52">Products</span></div>
+<div style="padding: 14px; border-radius: 14px; background: #F6F3EE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 28px; font-weight: 500">0</span><span style="font-size: 13px; color: #5E5A52">Orders</span></div>
+<div style="padding: 14px; border-radius: 14px; background: #F6F3EE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 28px; font-weight: 500">0</span><span style="font-size: 13px; color: #5E5A52">Custom requests</span></div>
+<div style="padding: 14px; border-radius: 14px; background: #F6F3EE; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 600; color: #8A4B12; padding-top: 8px">Not live</span><span style="font-size: 13px; color: #5E5A52">Website</span></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; background: #2E5E45; color: #FFFFFF; border-radius: 22px">
+<div style="width: 44px; height: 44px; border-radius: 999px; background: #F1DFC0; color: #2E5E45; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"></path><path d="M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg>
+</div>
+<div style="font-family: Fraunces, Georgia, serif; font-size: 20px; font-weight: 600">Not sure where to start?</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #D7E6DC">Tell our assistant what you make. It will suggest your first products, prices and a website layout.</p>
+<button style="height: 44px; border: 0; border-radius: 999px; background: #FFFFFF; color: #2E5E45; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Ask the assistant</button>
+</div>
+</aside>
+</section>
+
+<section style="padding: 32px 40px 0" aria-label="Build your first website">
+<div style="display: flex; gap: 32px; padding: 32px; background: #1E1E1B; color: #FFFFFF; border-radius: 22px">
+<div style="width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #F1DFC0; color: #1E1E1B; font-size: 12px; font-weight: 600">Step 4 · Free to start</span>
+<h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 40px; line-height: 1.08; font-weight: 600">Build your first website</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #CFCBC3">Pick a look and we’ll fill it with your profile and products. Buyers can order as shown, customize, or ask you to build something new, right from your site.</p>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; color: #CFCBC3">Choose a template</span>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{templates}}" as="t" hint-placeholder-count="3">
+<button onClick="{{t.pick}}" aria-pressed="{{t.active}}" style="{{t.btnStyle}}">
+<span style="{{t.swatchStyle}}"></span>
+<span>{{t.name}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="site-address" style="font-size: 13px; font-weight: 600; color: #CFCBC3">Your web address</label>
+<div style="height: 46px; display: flex; align-items: center; border-radius: 12px; background: #2C2C28; padding: 0 14px; font-size: 15px">
+<input id="site-address" type="text" value="oakandember" style="width: 120px; border: 0; outline: none; background: transparent; font: inherit; color: #FFFFFF">
+<span style="color: #A9A49B">.[YOURDOMAIN].com</span>
+</div>
+</div>
+<div style="display: flex; gap: 10px">
+<button style="height: 50px; padding: 0 22px; border: 0; border-radius: 999px; background: #F1DFC0; color: #1E1E1B; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Start building</button>
+<button style="height: 50px; padding: 0 20px; border: 1px solid #55524B; border-radius: 999px; background: transparent; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Preview</button>
+</div>
+</div>
+
+<div style="flex-grow: 1; border-radius: 14px; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column" aria-label="Website preview">
+<div style="height: 36px; padding: 0 14px; display: flex; align-items: center; gap: 6px; background: #E9E6E0">
+<span style="width: 10px; height: 10px; border-radius: 999px; background: #CFC9BF"></span>
+<span style="width: 10px; height: 10px; border-radius: 999px; background: #CFC9BF"></span>
+<span style="width: 10px; height: 10px; border-radius: 999px; background: #CFC9BF"></span>
+<span style="margin-left: 12px; flex-grow: 1; height: 22px; border-radius: 6px; background: #FFFFFF; font-size: 11px; color: #5E5A52; display: flex; align-items: center; padding: 0 10px">oakandember.[YOURDOMAIN].com</span>
+</div>
+<div style="{{pv.pageStyle}}">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="{{pv.logoStyle}}">Oak &amp; Ember</span>
+<span style="display: flex; gap: 14px; font-size: 11px">
+<span>Shop</span><span>Custom orders</span><span>About</span>
+</span>
+</div>
+<div style="{{pv.heroStyle}}">
+<div style="display: flex; flex-direction: column; gap: 10px; flex-grow: 1">
+<span style="{{pv.headStyle}}">{{pv.headline}}</span>
+<span style="{{pv.ctaStyle}}">Shop the collection</span>
+</div>
+<span style="{{pv.artStyle}}"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="{{pv.tileA}}"></span><span style="font-size: 11px; font-weight: 600">Serving Board</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="{{pv.tileB}}"></span><span style="font-size: 11px; font-weight: 600">Cheese Board</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="{{pv.tileC}}"></span><span style="font-size: 11px; font-weight: 600">Build your own</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 32px 40px 64px" aria-label="Your products">
+<div style="display: flex; flex-direction: column; gap: 22px; padding: 32px; background: #FFFFFF; border-radius: 22px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 30px; font-weight: 600">Add your first product</h2>
+<p style="margin: 0; font-size: 15px; color: #5E5A52">Every product can be sold three ways. Turn on the ones that fit your craft.</p>
+</div>
+<button style="height: 48px; padding: 0 22px; display: flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; background: #2E5E45; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+Add product
+</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 16px; background: #F6F3EE">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #EAE0CF; color: #5A3E22; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l8-4 8 4-8 4z"></path><path d="M4 8v8l8 4 8-4V8"></path></svg></span>
+<span style="font-family: Fraunces, Georgia, serif; font-size: 19px; font-weight: 600">Default</span>
+<span style="font-size: 14px; line-height: 1.5; color: #45423C">Sell it exactly as shown, at a fixed price. Best for ready-made stock.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 16px; background: #F6F3EE">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #E3DFEC; color: #4B3F73; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg></span>
+<span style="font-family: Fraunces, Georgia, serif; font-size: 19px; font-weight: 600">Customize</span>
+<span style="font-size: 14px; line-height: 1.5; color: #45423C">Let buyers pick size, material and font, and add their own words. You set the price for each choice.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 16px; background: #F6F3EE">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #DCE5DC; color: #2E5E45; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"></path></svg></span>
+<span style="font-family: Fraunces, Georgia, serif; font-size: 19px; font-weight: 600">Build your own</span>
+<span style="font-size: 14px; line-height: 1.5; color: #45423C">Buyers describe an idea to the chat assistant. You get the request and reply with a quote and mockup.</span>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"template":{"editor":"enum","options":["workshop","gallery","minimal"],"default":"workshop"},"$preview":{"width":1280,"height":2160}}'>
+var STEPS = [
+  { title: 'Create your account', sub: 'You’re signed in.', body: 'Your seller account is ready.', cta: 'Account settings' },
+  { title: 'Set up your shop profile', sub: 'Name, photo, cover and story', body: 'Buyers see this at the top of your public page and website.', cta: 'Edit profile' },
+  { title: 'Add your first product', sub: 'Choose Default, Customize or Build your own', body: 'Add photos, a price and the buying options you want to offer.', cta: 'Add product' },
+  { title: 'Build your first website', sub: 'Pick a template and go live', body: 'Your site uses your profile and products automatically. Change anything later.', cta: 'Start building' },
+  { title: 'Set up payouts', sub: 'Get paid for every order', body: 'Add your bank details so earnings reach you after each order ships.', cta: 'Add bank details' }
+];
+var TPL = {
+  workshop: { name: 'Workshop', bg: '#F6F1E8', ink: '#2B2219', accent: '#6B4630', head: 'Fraunces, Georgia, serif', headline: 'Made by hand, made for you', art: '#B8956A', tiles: ['#EAE0CF', '#DCE5DC', '#F0DDD4'] },
+  gallery: { name: 'Gallery', bg: '#FFFFFF', ink: '#1E1E1B', accent: '#1E1E1B', head: "'Hanken Grotesk', sans-serif", headline: 'Wood, worked slowly.', art: '#7E9C80', tiles: ['#EDEDEE', '#E3DFEC', '#DCE5DC'] },
+  minimal: { name: 'Minimal', bg: '#EEF2EE', ink: '#1F3A2C', accent: '#2E5E45', head: 'Fraunces, Georgia, serif', headline: 'Boards and bowls for everyday tables', art: '#2E5E45', tiles: ['#FFFFFF', '#FFFFFF', '#FFFFFF'] }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { done: [true, true, false, false, false], open: 2, template: null };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var count = st.done.filter(Boolean).length;
+    var firstTodo = st.done.indexOf(false);
+    var steps = STEPS.map(function (s, i) {
+      var done = st.done[i];
+      var open = st.open === i;
+      var current = i === firstTodo;
+      return {
+        title: s.title, sub: s.sub, body: s.body, cta: s.cta, num: i + 1, done: done, todo: !done, open: open,
+        rowStyle: 'border-radius: 14px; ' + (open ? 'background: #F6F3EE; border: 1px solid #E1DCD3' : 'background: #FFFFFF; border: 1px solid #EFEBE4'),
+        markStyle: 'width: 34px; height: 34px; flex-shrink: 0; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; ' + (done ? 'background: #2E5E45; color: #FFFFFF' : (current ? 'background: #FFFFFF; color: #2E5E45; border: 2px solid #2E5E45; box-sizing: border-box' : 'background: #EFEBE4; color: #5E5A52')),
+        titleStyle: 'font-size: 16px; font-weight: 600; ' + (done ? 'color: #5E5A52; text-decoration: line-through' : 'color: #1E1E1B'),
+        chevStyle: 'flex-shrink: 0; transform: rotate(' + (open ? 180 : 0) + 'deg)',
+        toggle: function () { self.setState({ open: open ? -1 : i }); },
+        complete: function () { var d = self.state.done.slice(); d[i] = true; var nx = d.indexOf(false); self.setState({ done: d, open: nx }); }
+      };
+    });
+    var key = st.template || this.props.template || 'workshop';
+    var t = TPL[key];
+    var templates = Object.keys(TPL).map(function (k) {
+      var on = k === key; var x = TPL[k];
+      return {
+        name: x.name, active: on,
+        pick: function () { self.setState({ template: k }); },
+        btnStyle: 'height: 76px; padding: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; font: inherit; font-size: 13px; font-weight: 600; color: #FFFFFF; cursor: pointer; background: ' + (on ? '#3A3934' : '#2C2C28') + '; border: ' + (on ? '2px solid #F1DFC0' : '2px solid transparent'),
+        swatchStyle: 'width: 48px; height: 28px; border-radius: 6px; background: ' + x.bg + '; box-shadow: inset 0 -10px 0 ' + x.art
+      };
+    });
+    var tile = function (c) { return 'display: block; height: 90px; border-radius: 8px; background: ' + c + (key === 'minimal' ? '; border: 1px solid #D5DED7' : ''); };
+    var PAGES = { home: 'Home', orders: 'Orders', products: 'Products', requests: 'Custom requests', customers: 'Customers', analytics: 'Analytics', marketing: 'Marketing', discounts: 'Discounts', payouts: 'Payouts', website: 'Website', marketplace: 'Marketplace', settings: 'Settings' };
+    var page = st.page || 'home';
+    var nav = {}, go = {};
+    Object.keys(PAGES).forEach(function (k) {
+      var on = k === page;
+      nav[k] = 'width: 100%; min-height: 40px; padding: 0 10px; display: flex; align-items: center; gap: 10px; border: 0; border-radius: 10px; font: inherit; font-size: 14px; text-align: left; cursor: pointer; ' + (on ? 'background: #FFFFFF; color: #1E1E1B; font-weight: 600; box-shadow: 0 1px 2px rgba(30,30,27,0.08)' : 'background: transparent; color: #33312C; font-weight: 500');
+      go[k] = function () { self.setState({ page: k }); };
+    });
+    return {
+      nav: nav, go: go,
+      notHome: page !== 'home',
+      pageName: PAGES[page],
+      doneShort: count + '/' + STEPS.length,
+      steps: steps,
+      doneLabel: count + ' of ' + STEPS.length + ' done',
+      progressStyle: 'width: ' + Math.round(count / STEPS.length * 100) + '%; height: 100%; background: #2E5E45; border-radius: 999px',
+      templates: templates,
+      pv: {
+        headline: t.headline,
+        pageStyle: 'flex-grow: 1; padding: 22px 26px; display: flex; flex-direction: column; gap: 18px; background: ' + t.bg + '; color: ' + t.ink,
+        logoStyle: 'font-family: ' + t.head + '; font-size: 17px; font-weight: 600',
+        heroStyle: 'display: flex; align-items: center; gap: 20px; padding: 22px; border-radius: 12px; background: ' + (key === 'gallery' ? '#F2EFEA' : 'rgba(255,255,255,0.6)'),
+        headStyle: 'font-family: ' + t.head + '; font-size: 26px; line-height: 1.1; font-weight: 600',
+        ctaStyle: 'align-self: flex-start; padding: 8px 14px; border-radius: 999px; background: ' + t.accent + '; color: #FFFFFF; font-size: 11px; font-weight: 600',
+        artStyle: 'width: 120px; height: 90px; flex-shrink: 0; border-radius: ' + (key === 'gallery' ? '999px' : '14px') + '; background: ' + t.art,
+        tileA: tile(t.tiles[0]), tileB: tile(t.tiles[1]), tileC: tile(t.tiles[2])
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
